@@ -10,4 +10,4 @@ sudo docker pull ansi/mosquitto
 
 Run it
 ======
-sudo docker run -d -p 1833:1833 -t ansi/mosquitto
+sudo docker run -p 1833:1833 --name mosquitto -d ansi/mosquitto
