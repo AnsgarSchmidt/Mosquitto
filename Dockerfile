@@ -15,5 +15,6 @@ WORKDIR /usr/local/src/mosquitto-1.4.7
 RUN make
 RUN make install
 RUN adduser --system --disabled-password --disabled-login mosquitto
+USER mosquitto
 EXPOSE 1883
 CMD ["/usr/local/sbin/mosquitto"]
