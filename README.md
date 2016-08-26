@@ -2,7 +2,7 @@ Mosquitto
 =========
 
 Docker build file for mosquitto. This docker file is based on
-ubuntu 16.04 and mosquitto version 1.4.9
+ubuntu 16.04 and mosquitto version 1.4.10
 
 Get it
 ======
