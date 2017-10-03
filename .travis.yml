@@ -3,7 +3,11 @@ services:
 - docker
 language: bash
 script:
-# prepare qemu
 - docker run --rm --privileged multiarch/qemu-user-static:register --reset
-# build image
-- docker build -t ansi/rpi-mosquitto -f Dockerfile-raspi3 .
+- docker build -t ansi/raspberrypi3-mosquitto:latest -f Dockerfile-raspi3 .
+- docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+- docker push ansi/raspberrypi3-mosquitto:latest
+env:
+  global:
+  - secure: WkAlLNHW0xV3Wv+O0JdOYi6P1toJqJ13NZqHqR+jVbkikGeVbC/jDLmdWW0ufJ3APkAvnNgBjwwVp0xrWeasxVnCp3Z75WwTd+JdbtAz8F0qLZijevrmBHCj7Nxr2mEYO76UQMmo4oCaw6JvUkr4S/mF934cJNGmqB6vBNVeavs+yXaZqyF7raLKoMdtdX+M3W8eIK2t0wT71lZRCqsWm4bshXsG4A75QmGjR+0mucGv/dBJImOkZRLl16R9e8rl6qMx1NllPJJLyO1bdubZ5W/X8aX8jf5/JpGQIH1JWsi+8tMOixvodXxU6qutLIf5Kg8MPgb7+c3HDdW9LqSnm6vS+xu9HqHPqbpobp3lP05IGBH5c8QE/tw5apc1U1xQBE2GO9a8+lajAu6k1/n8Mbp0mbtWorb5xCZ5KMZDHQetM8QhIQLh/OK7XsI8cdwNJ0AX+uNViMNfnBePu/KDNmP5rQseSyn42Kc3gu/HW8HOl5iEf6Esj79xZ9P3kgT2qpYX8E2XIXFELNweBZ9B09dO/Cjv+Iu2uqP2MB8Jst/oBahdhnZKEFx0cYRIrpEnGWB1agq7JgBnDPnoTXQlHzD2N84hBdM0Hn5tlXZ3f8uKHDdDn6r+Z5RkM0f+S5L3mbSciHdlgzBiLkIipsvZa2ap15v5JoZBkGkidpkQidM=
+  - secure: ePzXIo2Z/pCIdHTpudrwkerrT5L+BDf8akYyoN+E4y/dkKpGs3CgjF+uF+cRNshnuNnk7U/wae96X1/oJ2pVU386wAE35KMAyjoYi3Akis8zF+hpDK7jv3YhH0mAoI+w9uagcD+Hu17RYs4gRI5PVpJkVk79qfkb5YRnRT4qTpvTaCNpozD46gt6DOKcdbpLF7IRqZV92jRC4dSRq1DNHi8aUrGvZFS8HEKlDUZK6BSkK++QFbT6wiNedApQVVKeq5e4mi6xLpSX6s4lHR4QUrHCqXYskcyW0cc09I9MJORq7tl9SEkYa8oK7nCEo5+fEyolwLGRpN4TpNM1h4uhhFBTwjKprsgYImbLKwgcybYZ5+bpMIvEDzDOC0PBi4CgLXL4deL9FSbMb8fWYDfKhPFG0Lfp1X0wm0UmiUrSKEzQulE0dPuKx6xGlWm/nNHAZLGDVeAJD6EzOve5ZJxpRoWPj7loaq6rZM2SAdDOWmJpLULmGl3AHPXBV3AHq7dH+5vKikGpJdVGfU6bPYgnGASMg86jbFoFkD6kd4p0iMsj1JN+kJKm+6ySa334pLVnP8OWOnvrhXY7EDdEaIRiybNvCqV5CAACBNwN84FZA2uDDaG0qfp5T0w850XwhVcSSUrC6ox5L6y0HAIjAhFCorEd+9JcrNtvHu56OFaKG3s=
