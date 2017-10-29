@@ -15,10 +15,12 @@ RUN apt-get update     && \
 
 RUN     mkdir -p /usr/local/src
 WORKDIR          /usr/local/src
-RUN     wget http://mosquitto.org/files/source/mosquitto-$MOSQUITTOVERSION.tar.gz
-RUN     tar xvzf ./mosquitto-$MOSQUITTOVERSION.tar.gz
-WORKDIR /usr/local/src/mosquitto-$MOSQUITTOVERSION
-RUN     make && make install
+RUN     wget http://mosquitto.org/files/source/mosquitto-$MOSQUITTOVERSION.tar.gz && \
+        tar xvzf ./mosquitto-$MOSQUITTOVERSION.tar.gz && \
+        rm mosquitto-$MOSQUITTOVERSION.tar.gz && \
+        cd mosquitto-$MOSQUITTOVERSION && \
+        make && make install && \
+        cd .. && rm -rf mosquitto-$MOSQUITTOVERSION
 
 RUN     adduser --system --disabled-password --disabled-login mosquitto
 USER    mosquitto
