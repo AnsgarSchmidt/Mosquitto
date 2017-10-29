@@ -10,7 +10,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update     && \
     apt-get upgrade -y && \
     apt-get install -y wget build-essential libwrap0-dev libssl-dev python-distutils-extra \
-                       libc-ares-dev uuid-dev
+                       libc-ares-dev uuid-dev && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN     mkdir -p /usr/local/src
 WORKDIR          /usr/local/src
