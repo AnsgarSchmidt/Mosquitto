@@ -5,7 +5,7 @@ Mosquitto
 [![](https://badge.imagelayers.io/ansi/mosquitto:latest.svg)]()
 
 Docker build file for mosquitto. This docker file is based on
-ubuntu 16.04 and mosquitto version 1.4.14
+ubuntu 18.04 and mosquitto version 1.4.14
 
 Get it
 ======
