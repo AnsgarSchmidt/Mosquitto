@@ -1,7 +1,7 @@
 FROM resin/raspberrypi3-debian:latest
 
 ARG  MOSQUITTOVERSION
-ENV  MOSQUITTOVERSION 1.4.15
+ENV  MOSQUITTOVERSION 1.5
 
 MAINTAINER Ansgar Schmidt <ansgar.schmidt@gmx.net>
 
@@ -25,5 +25,3 @@ USER    mosquitto
 EXPOSE 1883
 
 CMD ["/usr/local/sbin/mosquitto"]
-
-
