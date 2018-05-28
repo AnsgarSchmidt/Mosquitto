@@ -18,6 +18,7 @@ RUN     wget http://mosquitto.org/files/source/mosquitto-$MOSQUITTOVERSION.tar.g
 RUN     tar xvzf ./mosquitto-$MOSQUITTOVERSION.tar.gz
 WORKDIR /usr/local/src/mosquitto-$MOSQUITTOVERSION
 RUN     make && make install
+RUN     ldconfig 
 
 RUN     adduser --system --disabled-password --disabled-login mosquitto
 USER    mosquitto
