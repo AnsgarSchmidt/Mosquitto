@@ -1,7 +1,7 @@
 FROM ubuntu:21.04
 
 ARG  MOSQUITTOVERSION
-ENV  MOSQUITTOVERSION 1.5.5
+ENV  MOSQUITTOVERSION 2.0.9
 
 MAINTAINER Ansgar Schmidt <ansgar.schmidt@gmx.net>
 
