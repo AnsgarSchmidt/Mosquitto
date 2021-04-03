@@ -1,11 +1,9 @@
 Mosquitto
 =========
-[![Docker Build Statu](https://img.shields.io/docker/build/ansi/mosquitto.svg)]()
 [![Docker Pulls](https://img.shields.io/docker/pulls/ansi/mosquitto.svg)]()
-[![](https://badge.imagelayers.io/ansi/mosquitto:latest.svg)]()
 
 Docker build file for mosquitto. This docker file is based on
-ubuntu 18.04 and mosquitto version 1.5.5
+ubuntu 21.04 and mosquitto version 2.0.9
 
 Get it
 ======
